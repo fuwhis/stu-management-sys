@@ -11,23 +11,56 @@ namespace PRN292_Group1_QLSvien.Models.DataProvider
 {
     public class DataProvider
     {
-        static string strConnection;
+        private static string strConnection = ConfigurationManager.ConnectionStrings["QLSVien"].ConnectionString;
 
-        public DataProvider()
+        public static DataTable ExecuteQuery(string Sql, params object[] parameters)
         {
-            strConnection = getConnectionString(); 
+            SqlConnection conn = new SqlConnection(strConnection);
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            if (parameters != null)
+            {
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue((i + 1) + "", parameters[i]);
+                }
+            }
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            conn.Close();
+            return dt;
         }
 
-        public string getConnectionString()
+        public static bool ExecuteNonQuery(string Sql, params object[] parameters)
         {
-            return "server=.;database=QLSVien;uid=sa;pwd=12345678";
+            SqlConnection conn = new SqlConnection(strConnection);
+            SqlCommand cmd = new SqlCommand(Sql, conn);
+            if (parameters != null)
+            {
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue((i + 1) + "", parameters[i]);
+                }
+            }
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            bool result = cmd.ExecuteNonQuery() > 0;
+            conn.Close();
+            return result;
         }
 
         public static SqlDataReader ExecuteDataReader(string Sql, params object[] parameters)
         {
-            SqlConnection cn = new SqlConnection(strConnection);
+            SqlConnection conn = new SqlConnection(strConnection);
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
+            cmd.Connection = conn;
             cmd.CommandText = Sql;
             if (parameters != null)
             {
@@ -36,9 +69,9 @@ namespace PRN292_Group1_QLSvien.Models.DataProvider
                     cmd.Parameters.AddWithValue((i + 1) + "", parameters[i]);
                 }
             }
-            if (cn.State == ConnectionState.Closed)
+            if (conn.State == ConnectionState.Closed)
             {
-                cn.Open();
+                conn.Open();
             }
             SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;

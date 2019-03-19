@@ -36,7 +36,7 @@ namespace PRN292_Group1_QLSvien
         {
             if (string.IsNullOrEmpty(txtUsername.Text))
             {
-                MetroFramework.MetroMessageBox.Show(this, "Please enter your username.", "Message", 
+                MetroFramework.MetroMessageBox.Show(this, "Please enter your username.", "Message",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
@@ -47,8 +47,13 @@ namespace PRN292_Group1_QLSvien
                 // select bảng account 
                 // nếu có giá trị tiếp tục kiểm tra -> nếu password db == txtpassword thì đóng frmLogin.Hide(); frmMain.ShowDialog();
                 // Nếu không có kết quả db trả về thông báo 
-                AccountUtils account = new AccountUtils(); 
-                
+                if (AccountUtils.checkLogin(txtUsername.Text.Trim(), txtPassword.Text))
+                {
+                    frmMain frmMain = new frmMain();
+                    frmMain.ShowDialog();
+                    this.Hide();
+                }
+
             }
             catch (Exception ex)
             {

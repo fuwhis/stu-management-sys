@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PRN292_Group1_QLSvien.Models.Account
 {
-    class AccountUtils
+    public class AccountUtils
     {
         public static bool checkLogin(string username, string password)
         {
-            return DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM ACCOUNT").Read();
+            return DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM ACCOUNT WHERE username = @1 AND password = @2", username, password).Read();
         }
     }
 }
