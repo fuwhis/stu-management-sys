@@ -366,9 +366,9 @@
             // 
             // btnShowData
             // 
-            this.btnShowData.Location = new System.Drawing.Point(24, 310);
+            this.btnShowData.Location = new System.Drawing.Point(23, 310);
             this.btnShowData.Name = "btnShowData";
-            this.btnShowData.Size = new System.Drawing.Size(339, 58);
+            this.btnShowData.Size = new System.Drawing.Size(325, 58);
             this.btnShowData.TabIndex = 13;
             this.btnShowData.Text = "Show Data";
             this.btnShowData.UseSelectable = true;

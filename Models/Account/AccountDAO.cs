@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRN292_Group1_QLSvien.Models.Account
 {
-    public class AccountUtils
+    public class AccountDAO
     {
         public static bool checkLogin(string username, string password)
         {

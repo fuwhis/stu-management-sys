@@ -43,11 +43,7 @@ namespace PRN292_Group1_QLSvien
             }
             try
             {
-                // tạo kết nối db 
-                // select bảng account 
-                // nếu có giá trị tiếp tục kiểm tra -> nếu password db == txtpassword thì đóng frmLogin.Hide(); frmMain.ShowDialog();
-                // Nếu không có kết quả db trả về thông báo 
-                if (AccountUtils.checkLogin(txtUsername.Text.Trim(), txtPassword.Text))
+                if (AccountDAO.checkLogin(txtUsername.Text.Trim(), txtPassword.Text))
                 {
                     frmMain frmMain = new frmMain();
                     frmMain.ShowDialog();

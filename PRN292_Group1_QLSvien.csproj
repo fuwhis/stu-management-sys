@@ -73,10 +73,10 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account\AccountUtils.cs" />
+    <Compile Include="Models\Account\AccountDAO.cs" />
     <Compile Include="Models\DataProvider\DataProvider.cs" />
     <Compile Include="Models\SinhVien\SinhVien.cs" />
-    <Compile Include="Models\SinhVien\SinhVienData.cs" />
+    <Compile Include="Models\SinhVien\SinhVienDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
