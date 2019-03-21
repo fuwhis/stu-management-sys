@@ -41,7 +41,7 @@
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.txtHo = new MetroFramework.Controls.MetroTextBox();
             this.txtMaSV = new MetroFramework.Controls.MetroTextBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvManager = new System.Windows.Forms.DataGridView();
             this.btnAddNewStudent = new MetroFramework.Controls.MetroButton();
             this.btnUpdateStudent = new MetroFramework.Controls.MetroButton();
             this.btnRemoveStudent = new MetroFramework.Controls.MetroButton();
@@ -49,7 +49,7 @@
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.btnShowData = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManager)).BeginInit();
             this.SuspendLayout();
             // 
             // lbMaSV
@@ -311,13 +311,14 @@
             this.txtMaSV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMaSV.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // dataGridView
+            // dgvManager
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(369, 63);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(477, 305);
-            this.dataGridView.TabIndex = 7;
+            this.dgvManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvManager.Location = new System.Drawing.Point(369, 63);
+            this.dgvManager.Name = "dgvManager";
+            this.dgvManager.Size = new System.Drawing.Size(477, 305);
+            this.dgvManager.TabIndex = 7;
+            this.dgvManager.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManager_CellContentClick);
             // 
             // btnAddNewStudent
             // 
@@ -337,6 +338,7 @@
             this.btnUpdateStudent.TabIndex = 9;
             this.btnUpdateStudent.Text = "Update Data";
             this.btnUpdateStudent.UseSelectable = true;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // btnRemoveStudent
             // 
@@ -346,6 +348,7 @@
             this.btnRemoveStudent.TabIndex = 10;
             this.btnRemoveStudent.Text = "Remove a Student";
             this.btnRemoveStudent.UseSelectable = true;
+            this.btnRemoveStudent.Click += new System.EventHandler(this.btnRemoveStudent_Click);
             // 
             // btnSave
             // 
@@ -355,6 +358,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -362,7 +366,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(138, 49);
             this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Exit";
             this.btnCancel.UseSelectable = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -374,6 +378,7 @@
             this.btnShowData.TabIndex = 13;
             this.btnShowData.Text = "Show Data";
             this.btnShowData.UseSelectable = true;
+            this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
             // 
             // frmMain
             // 
@@ -383,7 +388,7 @@
             this.Controls.Add(this.btnShowData);
             this.Controls.Add(this.btnAddNewStudent);
             this.Controls.Add(this.btnUpdateStudent);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dgvManager);
             this.Controls.Add(this.btnRemoveStudent);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.btnSave);
@@ -393,7 +398,7 @@
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Right;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManager)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,7 +418,7 @@
         private MetroFramework.Controls.MetroTextBox txtTen;
         private MetroFramework.Controls.MetroTextBox txtHo;
         private MetroFramework.Controls.MetroTextBox txtMaSV;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dgvManager;
         private MetroFramework.Controls.MetroButton btnAddNewStudent;
         private MetroFramework.Controls.MetroButton btnUpdateStudent;
         private MetroFramework.Controls.MetroButton btnRemoveStudent;

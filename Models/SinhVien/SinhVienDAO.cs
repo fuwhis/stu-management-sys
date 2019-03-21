@@ -34,7 +34,7 @@ namespace PRN292_Group1_QLSvien.Models.SinhVien
             bool gioiTinh;
             DateTime ngaySinh;
             SinhVien sinhVien = null;
-            SqlDataReader dataReader = DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM SINHVIEN");
+            SqlDataReader dataReader = DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM SVIEN");
             while (dataReader.Read())
             {
                 maSV = (int)dataReader["MASV"];

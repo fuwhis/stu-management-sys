@@ -23,5 +23,10 @@ namespace PRN292_Group1_QLSvien
             frmMain frmMain = new frmMain();
             frmMain.ShowDialog();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Save updated data
+        }
     }
 }
