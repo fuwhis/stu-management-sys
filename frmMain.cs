@@ -33,9 +33,9 @@ namespace PRN292_Group1_QLSvien
         private void btnShowData_Click(object sender, EventArgs e)
         {
             List<SinhVien> list = new List<SinhVien>();
-            list = SinhVienDAO.ListAllStudent();
             try
             {
+                list = SinhVienDAO.ListAllStudent();
                 if (list != null)
                 {
                     // Show data 
