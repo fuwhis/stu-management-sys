@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace PRN292_Group1_QLSvien.Models.SinhVien
 {
     class SinhVienDAO
     {
-        // Add, Remove, Update, Save, FindAll functions implemented in this class
+        // Add, Remove, Update, Save, Cancel, Exit functions implemented in this class
         public static bool addNewStudent(string maSV, string Ho, string Ten, DateTime ngaySinh, bool gioiTinh, string maKhoa)
         {
             return DataProvider.DataProvider.ExecuteNonQuery("INSERT INTO SVIEN(MASV, HO, TEN, NGAYSINH, GIOITINH, MAKH) " +
@@ -20,15 +21,36 @@ namespace PRN292_Group1_QLSvien.Models.SinhVien
             return DataProvider.DataProvider.ExecuteNonQuery("DELETE FROM SVIEN WHERE MASV = @1", maSV);
         }
 
-        public static void UpdateInfo()
+        public static void UpdateInfo(string maSV)
         {
 
         }
 
-        public static List<SinhVien> FindAll()
+        public static List<SinhVien> ListAllStudent()
         {
-
-            return null;
+            List<SinhVien> listSV = null;
+            int maSV;
+            string hoSV = null, tenSV = null, maKhoa = null;
+            bool gioiTinh;
+            DateTime ngaySinh;
+            SinhVien sinhVien = null;
+            SqlDataReader dataReader = DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM SINHVIEN");
+            while (dataReader.Read())
+            {
+                maSV = (int)dataReader["MASV"];
+                hoSV = (string)dataReader["HO"];
+                tenSV = (string)dataReader["TEN"];
+                ngaySinh = (DateTime)dataReader["NGAYSINH"];
+                gioiTinh = (bool)dataReader["GIOITINH"];
+                maKhoa = (string)dataReader["MAKH"];
+                sinhVien = new SinhVien(maSV, hoSV, tenSV, ngaySinh, gioiTinh, maKhoa);
+                if (listSV == null)
+                {
+                    listSV = new List<SinhVien>();
+                }
+                listSV.Add(sinhVien);
+            }
+            return listSV;
         }
     }
 }

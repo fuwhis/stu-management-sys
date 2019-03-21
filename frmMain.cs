@@ -16,5 +16,11 @@ namespace PRN292_Group1_QLSvien
         {
             InitializeComponent();
         }
+
+        private void btnAddNewStudent_Click(object sender, EventArgs e)
+        {
+            frmAdd_Update frmAdd = new frmAdd_Update();
+            frmAdd.Show();
+        }
     }
 }

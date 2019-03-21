@@ -327,6 +327,7 @@
             this.btnAddNewStudent.TabIndex = 8;
             this.btnAddNewStudent.Text = "Add New Student";
             this.btnAddNewStudent.UseSelectable = true;
+            this.btnAddNewStudent.Click += new System.EventHandler(this.btnAddNewStudent_Click);
             // 
             // btnUpdateStudent
             // 
