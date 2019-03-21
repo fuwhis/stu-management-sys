@@ -20,6 +20,8 @@ namespace PRN292_Group1_QLSvien
         private void btnExitForm_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmMain frmMain = new frmMain();
+            frmMain.ShowDialog();
         }
     }
 }
