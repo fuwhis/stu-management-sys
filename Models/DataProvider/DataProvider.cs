@@ -15,66 +15,68 @@ namespace PRN292_Group1_QLSvien.Models.DataProvider
 
         public static DataTable ExecuteQuery(string Sql, params object[] parameters)
         {
-            SqlConnection conn = new SqlConnection(strConnection);
-            SqlCommand cmd = new SqlCommand(Sql, conn);
+            SqlConnection sqlConnection = new SqlConnection(strConnection);
+            SqlCommand sqlCommand = new SqlCommand(Sql, sqlConnection);
             if (parameters != null)
             {
                 for (int i = 0; i < parameters.Length; i++)
                 {
-                    cmd.Parameters.AddWithValue((i + 1) + "", parameters[i]);
+                    sqlCommand.Parameters.AddWithValue((i + 1) + "", parameters[i]);
                 }
             }
-            if (conn.State == ConnectionState.Closed)
+            if (sqlConnection.State == ConnectionState.Closed)
             {
-                conn.Open();
+                sqlConnection.Open();
             }
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            da.Fill(dt);
-            conn.Close();
-            return dt;
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter sqlAdapter = new SqlDataAdapter();
+            sqlAdapter.SelectCommand = sqlCommand;
+            sqlAdapter.Fill(dataTable);
+            sqlConnection.Close();
+            return dataTable;
         }
 
         public static bool ExecuteNonQuery(string Sql, params object[] parameters)
         {
-            SqlConnection conn = new SqlConnection(strConnection);
-            SqlCommand cmd = new SqlCommand(Sql, conn);
+            SqlConnection sqlConnection = new SqlConnection(strConnection);
+            SqlCommand sqlCommand = new SqlCommand(Sql, sqlConnection);
             if (parameters != null)
             {
                 for (int i = 0; i < parameters.Length; i++)
                 {
-                    cmd.Parameters.AddWithValue((i + 1) + "", parameters[i]);
+                    sqlCommand.Parameters.AddWithValue((i + 1) + "", parameters[i]);
                 }
             }
-            if (conn.State == ConnectionState.Closed)
+            if (sqlConnection.State == ConnectionState.Closed)
             {
-                conn.Open();
+                sqlConnection.Open();
             }
-            bool result = cmd.ExecuteNonQuery() > 0;
-            conn.Close();
+            bool result = sqlCommand.ExecuteNonQuery() > 0;
+            sqlConnection.Close();
             return result;
         }
 
         public static SqlDataReader ExecuteDataReader(string Sql, params object[] parameters)
         {
-            SqlConnection conn = new SqlConnection(strConnection);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = Sql;
+            SqlConnection sqlConnection = new SqlConnection(strConnection);
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandText = Sql;
             if (parameters != null)
             {
                 for (int i = 0; i < parameters.Length; i++)
                 {
-                    cmd.Parameters.AddWithValue((i + 1) + "", parameters[i]);
+                    sqlCommand.Parameters.AddWithValue((i + 1) + "", parameters[i]);
                 }
             }
-            if (conn.State == ConnectionState.Closed)
+            if (sqlConnection.State == ConnectionState.Closed)
             {
-                conn.Open();
+                sqlConnection.Open();
             }
-            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            return dr;
+            SqlDataReader dataReader = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+            return dataReader;
         }
+
+        
     }
 }
