@@ -9,23 +9,25 @@ namespace PRN292_Group1_QLSvien.Models.SinhVien
     class SinhVienDAO
     {
         // Add, Remove, Update, Save, FindAll functions implemented in this class
-        public void addNewStudent()
+        public static bool addNewStudent(string maSV, string Ho, string Ten, DateTime ngaySinh, bool gioiTinh, string maKhoa)
+        {
+            return DataProvider.DataProvider.ExecuteNonQuery("INSERT INTO SVIEN(MASV, HO, TEN, NGAYSINH, GIOITINH, MAKH) " +
+                "Values(@1, @2, @3, @4, @5, @6)", maSV, Ho, Ten, ngaySinh, gioiTinh, maKhoa);
+        }
+
+        public static bool RemoveStudent(string maSV)
+        {
+            return DataProvider.DataProvider.ExecuteNonQuery("DELETE FROM SVIEN WHERE MASV = @1", maSV);
+        }
+
+        public static void UpdateInfo()
         {
 
         }
 
-        public void RemoveStudent()
+        public static List<SinhVien> FindAll()
         {
 
-        }
-
-        public void UpdateInfo()
-        {
-
-        }
-
-        public List<SinhVien> FindAll()
-        {
             return null;
         }
     }
