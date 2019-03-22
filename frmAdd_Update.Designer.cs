@@ -30,8 +30,6 @@
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.txtMaKhoa = new MetroFramework.Controls.MetroTextBox();
-            this.txtGioiTinh = new MetroFramework.Controls.MetroTextBox();
-            this.txtNgaySinh = new MetroFramework.Controls.MetroTextBox();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.txtHo = new MetroFramework.Controls.MetroTextBox();
             this.txtMaSV = new MetroFramework.Controls.MetroTextBox();
@@ -42,15 +40,20 @@
             this.lbMaSV = new MetroFramework.Controls.MetroLabel();
             this.lbHo = new MetroFramework.Controls.MetroLabel();
             this.btnSave = new MetroFramework.Controls.MetroButton();
-            this.btnExitForm = new MetroFramework.Controls.MetroButton();
+            this.btnReturn = new MetroFramework.Controls.MetroButton();
+            this.btnCheck = new MetroFramework.Controls.MetroButton();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.rdMale = new System.Windows.Forms.RadioButton();
+            this.rdFemale = new System.Windows.Forms.RadioButton();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.txtMaKhoa);
-            this.metroPanel1.Controls.Add(this.txtGioiTinh);
+            this.metroPanel1.Controls.Add(this.rdFemale);
+            this.metroPanel1.Controls.Add(this.rdMale);
             this.metroPanel1.Controls.Add(this.txtNgaySinh);
+            this.metroPanel1.Controls.Add(this.txtMaKhoa);
             this.metroPanel1.Controls.Add(this.txtTen);
             this.metroPanel1.Controls.Add(this.txtHo);
             this.metroPanel1.Controls.Add(this.txtMaSV);
@@ -63,9 +66,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(23, 28);
+            this.metroPanel1.Location = new System.Drawing.Point(21, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(519, 205);
+            this.metroPanel1.Size = new System.Drawing.Size(338, 244);
             this.metroPanel1.TabIndex = 7;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -77,7 +80,7 @@
             // 
             // 
             this.txtMaKhoa.CustomButton.Image = null;
-            this.txtMaKhoa.CustomButton.Location = new System.Drawing.Point(409, 1);
+            this.txtMaKhoa.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.txtMaKhoa.CustomButton.Name = "";
             this.txtMaKhoa.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMaKhoa.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -86,7 +89,7 @@
             this.txtMaKhoa.CustomButton.UseSelectable = true;
             this.txtMaKhoa.CustomButton.Visible = false;
             this.txtMaKhoa.Lines = new string[0];
-            this.txtMaKhoa.Location = new System.Drawing.Point(85, 167);
+            this.txtMaKhoa.Location = new System.Drawing.Point(85, 209);
             this.txtMaKhoa.MaxLength = 32767;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.PasswordChar = '\0';
@@ -95,71 +98,11 @@
             this.txtMaKhoa.SelectionLength = 0;
             this.txtMaKhoa.SelectionStart = 0;
             this.txtMaKhoa.ShortcutsEnabled = true;
-            this.txtMaKhoa.Size = new System.Drawing.Size(431, 23);
+            this.txtMaKhoa.Size = new System.Drawing.Size(232, 23);
             this.txtMaKhoa.TabIndex = 11;
             this.txtMaKhoa.UseSelectable = true;
             this.txtMaKhoa.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMaKhoa.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtGioiTinh
-            // 
-            // 
-            // 
-            // 
-            this.txtGioiTinh.CustomButton.Image = null;
-            this.txtGioiTinh.CustomButton.Location = new System.Drawing.Point(409, 1);
-            this.txtGioiTinh.CustomButton.Name = "";
-            this.txtGioiTinh.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtGioiTinh.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtGioiTinh.CustomButton.TabIndex = 1;
-            this.txtGioiTinh.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtGioiTinh.CustomButton.UseSelectable = true;
-            this.txtGioiTinh.CustomButton.Visible = false;
-            this.txtGioiTinh.Lines = new string[0];
-            this.txtGioiTinh.Location = new System.Drawing.Point(85, 130);
-            this.txtGioiTinh.MaxLength = 32767;
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.PasswordChar = '\0';
-            this.txtGioiTinh.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtGioiTinh.SelectedText = "";
-            this.txtGioiTinh.SelectionLength = 0;
-            this.txtGioiTinh.SelectionStart = 0;
-            this.txtGioiTinh.ShortcutsEnabled = true;
-            this.txtGioiTinh.Size = new System.Drawing.Size(431, 23);
-            this.txtGioiTinh.TabIndex = 10;
-            this.txtGioiTinh.UseSelectable = true;
-            this.txtGioiTinh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtGioiTinh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtNgaySinh
-            // 
-            // 
-            // 
-            // 
-            this.txtNgaySinh.CustomButton.Image = null;
-            this.txtNgaySinh.CustomButton.Location = new System.Drawing.Point(409, 1);
-            this.txtNgaySinh.CustomButton.Name = "";
-            this.txtNgaySinh.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtNgaySinh.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNgaySinh.CustomButton.TabIndex = 1;
-            this.txtNgaySinh.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNgaySinh.CustomButton.UseSelectable = true;
-            this.txtNgaySinh.CustomButton.Visible = false;
-            this.txtNgaySinh.Lines = new string[0];
-            this.txtNgaySinh.Location = new System.Drawing.Point(85, 89);
-            this.txtNgaySinh.MaxLength = 32767;
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.PasswordChar = '\0';
-            this.txtNgaySinh.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNgaySinh.SelectedText = "";
-            this.txtNgaySinh.SelectionLength = 0;
-            this.txtNgaySinh.SelectionStart = 0;
-            this.txtNgaySinh.ShortcutsEnabled = true;
-            this.txtNgaySinh.Size = new System.Drawing.Size(431, 23);
-            this.txtNgaySinh.TabIndex = 9;
-            this.txtNgaySinh.UseSelectable = true;
-            this.txtNgaySinh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNgaySinh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtTen
             // 
@@ -167,7 +110,7 @@
             // 
             // 
             this.txtTen.CustomButton.Image = null;
-            this.txtTen.CustomButton.Location = new System.Drawing.Point(182, 1);
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.txtTen.CustomButton.Name = "";
             this.txtTen.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -176,7 +119,7 @@
             this.txtTen.CustomButton.UseSelectable = true;
             this.txtTen.CustomButton.Visible = false;
             this.txtTen.Lines = new string[0];
-            this.txtTen.Location = new System.Drawing.Point(312, 52);
+            this.txtTen.Location = new System.Drawing.Point(85, 98);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -185,7 +128,7 @@
             this.txtTen.SelectionLength = 0;
             this.txtTen.SelectionStart = 0;
             this.txtTen.ShortcutsEnabled = true;
-            this.txtTen.Size = new System.Drawing.Size(204, 23);
+            this.txtTen.Size = new System.Drawing.Size(232, 23);
             this.txtTen.TabIndex = 8;
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -206,7 +149,7 @@
             this.txtHo.CustomButton.UseSelectable = true;
             this.txtHo.CustomButton.Visible = false;
             this.txtHo.Lines = new string[0];
-            this.txtHo.Location = new System.Drawing.Point(42, 52);
+            this.txtHo.Location = new System.Drawing.Point(85, 56);
             this.txtHo.MaxLength = 32767;
             this.txtHo.Name = "txtHo";
             this.txtHo.PasswordChar = '\0';
@@ -227,7 +170,7 @@
             // 
             // 
             this.txtMaSV.CustomButton.Image = null;
-            this.txtMaSV.CustomButton.Location = new System.Drawing.Point(393, 1);
+            this.txtMaSV.CustomButton.Location = new System.Drawing.Point(194, 1);
             this.txtMaSV.CustomButton.Name = "";
             this.txtMaSV.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMaSV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -245,7 +188,7 @@
             this.txtMaSV.SelectionLength = 0;
             this.txtMaSV.SelectionStart = 0;
             this.txtMaSV.ShortcutsEnabled = true;
-            this.txtMaSV.Size = new System.Drawing.Size(415, 23);
+            this.txtMaSV.Size = new System.Drawing.Size(216, 23);
             this.txtMaSV.TabIndex = 6;
             this.txtMaSV.UseSelectable = true;
             this.txtMaSV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -254,7 +197,7 @@
             // lbGioiTinh
             // 
             this.lbGioiTinh.AutoSize = true;
-            this.lbGioiTinh.Location = new System.Drawing.Point(13, 130);
+            this.lbGioiTinh.Location = new System.Drawing.Point(13, 172);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(67, 19);
             this.lbGioiTinh.TabIndex = 4;
@@ -263,7 +206,7 @@
             // lbMaKhoa
             // 
             this.lbMaKhoa.AutoSize = true;
-            this.lbMaKhoa.Location = new System.Drawing.Point(11, 167);
+            this.lbMaKhoa.Location = new System.Drawing.Point(11, 209);
             this.lbMaKhoa.Name = "lbMaKhoa";
             this.lbMaKhoa.Size = new System.Drawing.Size(68, 19);
             this.lbMaKhoa.TabIndex = 5;
@@ -272,7 +215,7 @@
             // lbTen
             // 
             this.lbTen.AutoSize = true;
-            this.lbTen.Location = new System.Drawing.Point(280, 53);
+            this.lbTen.Location = new System.Drawing.Point(11, 102);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(31, 19);
             this.lbTen.TabIndex = 2;
@@ -281,7 +224,7 @@
             // lbNgaySinh
             // 
             this.lbNgaySinh.AutoSize = true;
-            this.lbNgaySinh.Location = new System.Drawing.Point(11, 93);
+            this.lbNgaySinh.Location = new System.Drawing.Point(11, 135);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(75, 19);
             this.lbNgaySinh.TabIndex = 3;
@@ -299,7 +242,7 @@
             // lbHo
             // 
             this.lbHo.AutoSize = true;
-            this.lbHo.Location = new System.Drawing.Point(13, 52);
+            this.lbHo.Location = new System.Drawing.Point(13, 56);
             this.lbHo.Name = "lbHo";
             this.lbHo.Size = new System.Drawing.Size(33, 19);
             this.lbHo.TabIndex = 1;
@@ -307,7 +250,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(371, 251);
+            this.btnSave.Location = new System.Drawing.Point(160, 339);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 28);
             this.btnSave.TabIndex = 8;
@@ -315,25 +258,70 @@
             this.btnSave.UseSelectable = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnExitForm
+            // btnReturn
             // 
-            this.btnExitForm.Location = new System.Drawing.Point(467, 251);
-            this.btnExitForm.Name = "btnExitForm";
-            this.btnExitForm.Size = new System.Drawing.Size(75, 28);
-            this.btnExitForm.TabIndex = 9;
-            this.btnExitForm.Text = "Cancel";
-            this.btnExitForm.UseSelectable = true;
-            this.btnExitForm.Click += new System.EventHandler(this.btnExitForm_Click);
+            this.btnReturn.Location = new System.Drawing.Point(287, 339);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 28);
+            this.btnReturn.TabIndex = 9;
+            this.btnReturn.Text = "Cancel";
+            this.btnReturn.UseSelectable = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(24, 339);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(75, 28);
+            this.btnCheck.TabIndex = 10;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseSelectable = true;
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(85, 135);
+            this.txtNgaySinh.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(232, 20);
+            this.txtNgaySinh.TabIndex = 11;
+            // 
+            // rdMale
+            // 
+            this.rdMale.AutoSize = true;
+            this.rdMale.Location = new System.Drawing.Point(101, 174);
+            this.rdMale.Name = "rdMale";
+            this.rdMale.Size = new System.Drawing.Size(48, 17);
+            this.rdMale.TabIndex = 12;
+            this.rdMale.Text = "Male";
+            this.rdMale.UseVisualStyleBackColor = true;
+            this.rdMale.CheckedChanged += new System.EventHandler(this.rdMale_CheckedChanged);
+            // 
+            // rdFemale
+            // 
+            this.rdFemale.AutoSize = true;
+            this.rdFemale.Location = new System.Drawing.Point(232, 174);
+            this.rdFemale.Name = "rdFemale";
+            this.rdFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdFemale.TabIndex = 13;
+            this.rdFemale.TabStop = true;
+            this.rdFemale.Text = "Female";
+            this.rdFemale.UseVisualStyleBackColor = true;
+            this.rdFemale.CheckedChanged += new System.EventHandler(this.rdFemale_CheckedChanged);
             // 
             // frmAdd_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 302);
-            this.Controls.Add(this.btnExitForm);
+            this.ClientSize = new System.Drawing.Size(385, 385);
+            this.Controls.Add(this.btnCheck);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmAdd_Update";
+            this.Text = "Update Form";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -344,8 +332,6 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroTextBox txtMaKhoa;
-        private MetroFramework.Controls.MetroTextBox txtGioiTinh;
-        private MetroFramework.Controls.MetroTextBox txtNgaySinh;
         private MetroFramework.Controls.MetroTextBox txtTen;
         private MetroFramework.Controls.MetroTextBox txtHo;
         private MetroFramework.Controls.MetroTextBox txtMaSV;
@@ -356,6 +342,10 @@
         private MetroFramework.Controls.MetroLabel lbMaSV;
         private MetroFramework.Controls.MetroLabel lbHo;
         private MetroFramework.Controls.MetroButton btnSave;
-        private MetroFramework.Controls.MetroButton btnExitForm;
+        private MetroFramework.Controls.MetroButton btnReturn;
+        private MetroFramework.Controls.MetroButton btnCheck;
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
+        private System.Windows.Forms.RadioButton rdFemale;
+        private System.Windows.Forms.RadioButton rdMale;
     }
 }

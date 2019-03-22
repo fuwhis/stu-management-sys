@@ -316,7 +316,7 @@
             this.dgvManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvManager.Location = new System.Drawing.Point(369, 63);
             this.dgvManager.Name = "dgvManager";
-            this.dgvManager.Size = new System.Drawing.Size(477, 305);
+            this.dgvManager.Size = new System.Drawing.Size(652, 305);
             this.dgvManager.TabIndex = 7;
             this.dgvManager.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManager_CellContentClick);
             // 
@@ -384,7 +384,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 459);
+            this.ClientSize = new System.Drawing.Size(1044, 459);
             this.Controls.Add(this.btnShowData);
             this.Controls.Add(this.btnAddNewStudent);
             this.Controls.Add(this.btnUpdateStudent);

@@ -16,8 +16,9 @@ namespace PRN292_Group1_QLSvien
         public frmLogin()
         {
             InitializeComponent();
-
         }
+
+        frmMain frmMain = new frmMain();
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -45,9 +46,8 @@ namespace PRN292_Group1_QLSvien
             {
                 if (AccountDAO.checkLogin(txtUsername.Text.Trim(), txtPassword.Text))
                 {
-                    frmMain frmMain = new frmMain();
                     frmMain.ShowDialog();
-                    this.Hide();
+                    this.Close();
                 }
 
             }

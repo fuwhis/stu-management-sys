@@ -21,7 +21,7 @@ namespace PRN292_Group1_QLSvien
         private void btnAddNewStudent_Click(object sender, EventArgs e)
         {
             frmAdd_Update frmAdd = new frmAdd_Update();
-            this.Hide();
+            this.Close();
             frmAdd.ShowDialog();
         }
 
@@ -58,11 +58,30 @@ namespace PRN292_Group1_QLSvien
 
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
-
+            frmAdd_Update frmAdd = new frmAdd_Update();
+            this.Close();
+            frmAdd.ShowDialog();
         }
 
         private void btnRemoveStudent_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewSelectedRowCollection rows = dgvManager.SelectedRows;
+                foreach (DataGridViewRow row in rows)
+                {
+                    SinhVienDAO.RemoveStudent(row.Cells[0].Value.ToString());
+                }
+                MetroFramework.MetroMessageBox.Show(this, "Remove Successed.", "Message",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Update datasource after remove
+                dgvManager.DataSource = SinhVienDAO.ListAllStudent();
+            }
+            catch (Exception ex)
+            {
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
