@@ -45,7 +45,6 @@
             this.btnAddNewStudent = new MetroFramework.Controls.MetroButton();
             this.btnUpdateStudent = new MetroFramework.Controls.MetroButton();
             this.btnRemoveStudent = new MetroFramework.Controls.MetroButton();
-            this.btnSave = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.btnShowData = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
@@ -334,7 +333,7 @@
             // 
             // btnUpdateStudent
             // 
-            this.btnUpdateStudent.Location = new System.Drawing.Point(244, 387);
+            this.btnUpdateStudent.Location = new System.Drawing.Point(302, 387);
             this.btnUpdateStudent.Name = "btnUpdateStudent";
             this.btnUpdateStudent.Size = new System.Drawing.Size(138, 49);
             this.btnUpdateStudent.TabIndex = 9;
@@ -344,23 +343,13 @@
             // 
             // btnRemoveStudent
             // 
-            this.btnRemoveStudent.Location = new System.Drawing.Point(466, 387);
+            this.btnRemoveStudent.Location = new System.Drawing.Point(583, 387);
             this.btnRemoveStudent.Name = "btnRemoveStudent";
             this.btnRemoveStudent.Size = new System.Drawing.Size(138, 49);
             this.btnRemoveStudent.TabIndex = 10;
             this.btnRemoveStudent.Text = "Remove a Student";
             this.btnRemoveStudent.UseSelectable = true;
             this.btnRemoveStudent.Click += new System.EventHandler(this.btnRemoveStudent_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(678, 387);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(138, 49);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseSelectable = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -393,11 +382,10 @@
             this.Controls.Add(this.dgvManager);
             this.Controls.Add(this.btnRemoveStudent);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Name = "frmMain";
-            this.Text = "Hello";
-            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Right;
+            this.Text = "Data Display Form";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManager)).EndInit();
@@ -424,7 +412,6 @@
         private MetroFramework.Controls.MetroButton btnAddNewStudent;
         private MetroFramework.Controls.MetroButton btnUpdateStudent;
         private MetroFramework.Controls.MetroButton btnRemoveStudent;
-        private MetroFramework.Controls.MetroButton btnSave;
         private MetroFramework.Controls.MetroButton btnCancel;
         private MetroFramework.Controls.MetroButton btnShowData;
     }

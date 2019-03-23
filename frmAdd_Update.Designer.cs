@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.rdMale = new System.Windows.Forms.RadioButton();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtMaKhoa = new MetroFramework.Controls.MetroTextBox();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.txtHo = new MetroFramework.Controls.MetroTextBox();
@@ -42,9 +45,6 @@
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.btnReturn = new MetroFramework.Controls.MetroButton();
             this.btnCheck = new MetroFramework.Controls.MetroButton();
-            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.rdMale = new System.Windows.Forms.RadioButton();
-            this.rdFemale = new System.Windows.Forms.RadioButton();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,41 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // rdFemale
+            // 
+            this.rdFemale.AutoSize = true;
+            this.rdFemale.Location = new System.Drawing.Point(232, 174);
+            this.rdFemale.Name = "rdFemale";
+            this.rdFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdFemale.TabIndex = 13;
+            this.rdFemale.Text = "Female";
+            this.rdFemale.UseVisualStyleBackColor = true;
+            this.rdFemale.CheckedChanged += new System.EventHandler(this.rdFemale_CheckedChanged);
+            // 
+            // rdMale
+            // 
+            this.rdMale.AutoSize = true;
+            this.rdMale.Checked = true;
+            this.rdMale.Location = new System.Drawing.Point(101, 174);
+            this.rdMale.Name = "rdMale";
+            this.rdMale.Size = new System.Drawing.Size(48, 17);
+            this.rdMale.TabIndex = 12;
+            this.rdMale.TabStop = true;
+            this.rdMale.Text = "Male";
+            this.rdMale.UseVisualStyleBackColor = true;
+            this.rdMale.CheckedChanged += new System.EventHandler(this.rdMale_CheckedChanged);
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(85, 135);
+            this.txtNgaySinh.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(232, 20);
+            this.txtNgaySinh.TabIndex = 11;
             // 
             // txtMaKhoa
             // 
@@ -276,40 +311,6 @@
             this.btnCheck.TabIndex = 10;
             this.btnCheck.Text = "Check";
             this.btnCheck.UseSelectable = true;
-            // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgaySinh.Location = new System.Drawing.Point(85, 135);
-            this.txtNgaySinh.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(232, 20);
-            this.txtNgaySinh.TabIndex = 11;
-            // 
-            // rdMale
-            // 
-            this.rdMale.AutoSize = true;
-            this.rdMale.Location = new System.Drawing.Point(101, 174);
-            this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(48, 17);
-            this.rdMale.TabIndex = 12;
-            this.rdMale.Text = "Male";
-            this.rdMale.UseVisualStyleBackColor = true;
-            this.rdMale.CheckedChanged += new System.EventHandler(this.rdMale_CheckedChanged);
-            // 
-            // rdFemale
-            // 
-            this.rdFemale.AutoSize = true;
-            this.rdFemale.Location = new System.Drawing.Point(232, 174);
-            this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdFemale.TabIndex = 13;
-            this.rdFemale.TabStop = true;
-            this.rdFemale.Text = "Female";
-            this.rdFemale.UseVisualStyleBackColor = true;
-            this.rdFemale.CheckedChanged += new System.EventHandler(this.rdFemale_CheckedChanged);
             // 
             // frmAdd_Update
             // 

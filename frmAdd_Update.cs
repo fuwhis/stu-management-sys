@@ -59,10 +59,10 @@ namespace PRN292_Group1_QLSvien
             }
             else if (SinhVienDAO.IsExistedMASV(txtMaSV.Text.Trim()))
             {
-                // Nếu maSV tồn tại
                 DialogResult dialogResult2 = MetroFramework.MetroMessageBox.Show(this, "MaSV is already existed\nWould you like to UPDATE???", "Message",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 // UPDATE 
+                // Nếu maSV tồn tại
                 if (dialogResult2 == DialogResult.Yes)
                 {
                     try
@@ -98,6 +98,7 @@ namespace PRN292_Group1_QLSvien
 
         private void rdMale_CheckedChanged(object sender, EventArgs e)
         {
+            
             GioiTinh = true;
         }
 

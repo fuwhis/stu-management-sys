@@ -90,11 +90,6 @@ namespace PRN292_Group1_QLSvien
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            // Làm gì đây?????
-        }
-
         private void dgvManager_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
