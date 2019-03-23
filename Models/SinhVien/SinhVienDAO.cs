@@ -22,7 +22,7 @@ namespace PRN292_Group1_QLSvien.Models.SinhVien
 
         public static bool UpdateInfo(string maSV, string Ho, string Ten, DateTime ngaySinh, bool gioiTinh, string maKhoa)
         {
-            return DataProvider.DataProvider.ExecuteNonQuery("UPDATE SVIEN SET HO = @2, TEN = @3, NGAYSINH = @4, GIOITINH = @5, MAKHOA = @6 WHERE MASV = @1", maSV, Ho, Ten, ngaySinh, gioiTinh, maKhoa);
+            return DataProvider.DataProvider.ExecuteNonQuery("UPDATE SVIEN SET HO = @2, TEN = @3, NGAYSINH = @4, GIOITINH = @5, MAKH = @6 WHERE MASV = @1", maSV, Ho, Ten, ngaySinh, gioiTinh, maKhoa);
         }
 
         public static List<SinhVien> ListAllStudent()

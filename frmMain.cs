@@ -21,6 +21,7 @@ namespace PRN292_Group1_QLSvien
         private void btnAddNewStudent_Click(object sender, EventArgs e)
         {
             frmAdd_Update frmAdd = new frmAdd_Update();
+            frmAdd.Text = "Add Form";
             this.Close();
             frmAdd.ShowDialog();
         }
@@ -33,14 +34,17 @@ namespace PRN292_Group1_QLSvien
         private void btnShowData_Click(object sender, EventArgs e)
         {
             List<SinhVien> list = new List<SinhVien>();
+            BindingSource bs = new BindingSource();
             try
             {
                 list = SinhVienDAO.ListAllStudent();
                 if (list != null)
                 {
                     // Show data 
-                    dgvManager.DataSource = list;
-                    // Thay đổi hiển thị cột giới tính
+                    bs.DataSource = list;
+                    dgvManager.DataSource = bs;
+                    dgvManager.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvManager.AllowUserToResizeColumns = false;
 
                 }
                 else if (list == null)
@@ -59,6 +63,7 @@ namespace PRN292_Group1_QLSvien
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
             frmAdd_Update frmAdd = new frmAdd_Update();
+            frmAdd.Text = "Update Form";
             this.Close();
             frmAdd.ShowDialog();
         }
@@ -87,28 +92,49 @@ namespace PRN292_Group1_QLSvien
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            // Làm gì đây?????
         }
 
-        private void dgvManager_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvManager_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = dgvManager.CurrentRow.Index;
-
-            this.txtMaSV.Text = dgvManager.Rows[index].Cells[0].Value.ToString();
-            this.txtHo.Text = dgvManager.Rows[index].Cells[1].Value.ToString();
-            this.txtTen.Text = dgvManager.Rows[index].Cells[2].Value.ToString();
-            this.txtNgaySinh.Text = dgvManager.Rows[index].Cells[3].Value.ToString();
-            //this.txtGioiTinh.Text = (string)dgvManager.Rows[index].Cells[4].Value; // Hiển thị True/False
-            if (dgvManager.Rows[index].Cells[4].Value.Equals(true))
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                this.txtGioiTinh.Text = "Male";
-            }
-            else if (dgvManager.Rows[index].Cells[4].Value.Equals(false))
-            {
-                this.txtGioiTinh.Text = "Female";
-            }
+                // Get current index of cell
+                int index = dgvManager.CurrentRow.Index;
 
-            this.txtMaKhoa.Text = dgvManager.Rows[index].Cells[5].Value.ToString();
+                txtMaSV.Text = dgvManager.Rows[index].Cells[0].Value.ToString();
+
+                txtHo.Text = dgvManager.Rows[index].Cells[1].Value.ToString();
+                txtTen.Text = dgvManager.Rows[index].Cells[2].Value.ToString();
+                txtNgaySinh.Text = dgvManager.Rows[index].Cells[3].Value.ToString();
+                if (dgvManager.Rows[index].Cells[4].Value.Equals(true))
+                {
+                    txtGioiTinh.Text = "Male";
+                }
+                else if (dgvManager.Rows[index].Cells[4].Value.Equals(false))
+                {
+                    txtGioiTinh.Text = "Female";
+                }
+
+                txtMaKhoa.Text = dgvManager.Rows[index].Cells[5].Value.ToString();
+            }
+        }
+
+        private void dgvManager_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //DataGridViewRow dgvRow = new DataGridViewRow();
+            ////Boolean boolValue = (Boolean)e.Value;
+            //DataGridViewCheckBoxCell boolValue = dgvRow.Cells[4] as DataGridViewCheckBoxCell;
+
+            //if (Convert.ToString(boolValue.Value).Equals(1))
+            //{
+            //    //e.Value.Equals("Male");
+            //    e.CellStyle.Format = "Male";
+            //}
+            //else if(Convert.ToBoolean(boolValue.Value) == false)
+            //{
+            //    e.CellStyle.Format = "Female";
+            //}
         }
     }
 }

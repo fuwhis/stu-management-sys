@@ -49,7 +49,6 @@ namespace PRN292_Group1_QLSvien
                     frmMain.ShowDialog();
                     this.Close();
                 }
-
             }
             catch (Exception ex)
             {

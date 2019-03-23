@@ -36,9 +36,9 @@ namespace PRN292_Group1_QLSvien
             if (!SinhVienDAO.IsExistedMASV(txtMaSV.Text.Trim()))
             {
                 // ADD 
-                DialogResult dialogResult = MetroFramework.MetroMessageBox.Show(this, "MaSV is not already existed\nWould you like to ADD new???", "Message",
+                DialogResult dialogResult1 = MetroFramework.MetroMessageBox.Show(this, "MaSV is not already existed\nWould you like to ADD new???", "Message",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
+                if (dialogResult1 == DialogResult.Yes)
                 {
                     try
                     {
@@ -50,41 +50,49 @@ namespace PRN292_Group1_QLSvien
                         MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    if (result)
-                    {
-                        // ADD thành công
-                        MetroFramework.MetroMessageBox.Show(this, "Add Successed.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    
                 }
-                else if (dialogResult == DialogResult.No)
+                else if (dialogResult1 == DialogResult.No)
                 {
                     // Thoát form này
                     this.Close();
-                    
                 }
             }
             else if (SinhVienDAO.IsExistedMASV(txtMaSV.Text.Trim()))
             {
                 // Nếu maSV tồn tại
+                DialogResult dialogResult2 = MetroFramework.MetroMessageBox.Show(this, "MaSV is already existed\nWould you like to UPDATE???", "Message",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 // UPDATE 
-                try
+                if (dialogResult2 == DialogResult.Yes)
                 {
-                    result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
-                        txtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
+                    try
+                    {
+                        // Get value from sql 
+                        // Phía dưới sai rồi
+                        txtMaSV.ReadOnly = true;
+                        string HO = txtHo.Text.Trim();
+                        string TEN = txtTen.Text.Trim();
+                        DateTime NGAYSINH = txtNgaySinh.Value.Date;
+                        string MAKH = txtMaKhoa.Text.Trim();
+                        result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), HO, TEN, NGAYSINH, GioiTinh, MAKH);
+                        //result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
+                        //    txtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
+                    }
+                    catch (Exception ex)
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception ex)
+                else if (dialogResult2 == DialogResult.No)
                 {
-                    MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
                 }
-
-                if (result)
-                {
-                    // UPDATE thành công
-                    MetroFramework.MetroMessageBox.Show(this, "Update Successed.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
+            if (result)
+            {
+                // UPDATE thành công
+                MetroFramework.MetroMessageBox.Show(this, "Successed.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

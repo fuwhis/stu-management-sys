@@ -55,11 +55,11 @@
             // lbMaSV
             // 
             this.lbMaSV.AutoSize = true;
-            this.lbMaSV.Location = new System.Drawing.Point(13, 16);
+            this.lbMaSV.Location = new System.Drawing.Point(11, 14);
             this.lbMaSV.Name = "lbMaSV";
-            this.lbMaSV.Size = new System.Drawing.Size(92, 19);
+            this.lbMaSV.Size = new System.Drawing.Size(54, 19);
             this.lbMaSV.TabIndex = 0;
-            this.lbMaSV.Text = "Mã Sinh Viên: ";
+            this.lbMaSV.Text = "Mã SV: ";
             // 
             // lbHo
             // 
@@ -73,7 +73,7 @@
             // lbTen
             // 
             this.lbTen.AutoSize = true;
-            this.lbTen.Location = new System.Drawing.Point(149, 52);
+            this.lbTen.Location = new System.Drawing.Point(15, 93);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(31, 19);
             this.lbTen.TabIndex = 2;
@@ -82,7 +82,7 @@
             // lbNgaySinh
             // 
             this.lbNgaySinh.AutoSize = true;
-            this.lbNgaySinh.Location = new System.Drawing.Point(11, 93);
+            this.lbNgaySinh.Location = new System.Drawing.Point(11, 130);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(75, 19);
             this.lbNgaySinh.TabIndex = 3;
@@ -91,7 +91,7 @@
             // lbGioiTinh
             // 
             this.lbGioiTinh.AutoSize = true;
-            this.lbGioiTinh.Location = new System.Drawing.Point(13, 130);
+            this.lbGioiTinh.Location = new System.Drawing.Point(13, 167);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(67, 19);
             this.lbGioiTinh.TabIndex = 4;
@@ -100,7 +100,7 @@
             // lbMaKhoa
             // 
             this.lbMaKhoa.AutoSize = true;
-            this.lbMaKhoa.Location = new System.Drawing.Point(11, 167);
+            this.lbMaKhoa.Location = new System.Drawing.Point(11, 204);
             this.lbMaKhoa.Name = "lbMaKhoa";
             this.lbMaKhoa.Size = new System.Drawing.Size(68, 19);
             this.lbMaKhoa.TabIndex = 5;
@@ -125,7 +125,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(23, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(325, 205);
+            this.metroPanel1.Size = new System.Drawing.Size(325, 241);
             this.metroPanel1.TabIndex = 6;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -146,7 +146,7 @@
             this.txtMaKhoa.CustomButton.UseSelectable = true;
             this.txtMaKhoa.CustomButton.Visible = false;
             this.txtMaKhoa.Lines = new string[0];
-            this.txtMaKhoa.Location = new System.Drawing.Point(85, 167);
+            this.txtMaKhoa.Location = new System.Drawing.Point(85, 204);
             this.txtMaKhoa.MaxLength = 32767;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.PasswordChar = '\0';
@@ -176,7 +176,7 @@
             this.txtGioiTinh.CustomButton.UseSelectable = true;
             this.txtGioiTinh.CustomButton.Visible = false;
             this.txtGioiTinh.Lines = new string[0];
-            this.txtGioiTinh.Location = new System.Drawing.Point(85, 130);
+            this.txtGioiTinh.Location = new System.Drawing.Point(85, 167);
             this.txtGioiTinh.MaxLength = 32767;
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.PasswordChar = '\0';
@@ -206,7 +206,7 @@
             this.txtNgaySinh.CustomButton.UseSelectable = true;
             this.txtNgaySinh.CustomButton.Visible = false;
             this.txtNgaySinh.Lines = new string[0];
-            this.txtNgaySinh.Location = new System.Drawing.Point(85, 89);
+            this.txtNgaySinh.Location = new System.Drawing.Point(85, 126);
             this.txtNgaySinh.MaxLength = 32767;
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.PasswordChar = '\0';
@@ -227,7 +227,7 @@
             // 
             // 
             this.txtTen.CustomButton.Image = null;
-            this.txtTen.CustomButton.Location = new System.Drawing.Point(112, 1);
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(208, 1);
             this.txtTen.CustomButton.Name = "";
             this.txtTen.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -236,7 +236,7 @@
             this.txtTen.CustomButton.UseSelectable = true;
             this.txtTen.CustomButton.Visible = false;
             this.txtTen.Lines = new string[0];
-            this.txtTen.Location = new System.Drawing.Point(181, 52);
+            this.txtTen.Location = new System.Drawing.Point(85, 93);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -245,7 +245,7 @@
             this.txtTen.SelectionLength = 0;
             this.txtTen.SelectionStart = 0;
             this.txtTen.ShortcutsEnabled = true;
-            this.txtTen.Size = new System.Drawing.Size(134, 23);
+            this.txtTen.Size = new System.Drawing.Size(230, 23);
             this.txtTen.TabIndex = 8;
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -257,7 +257,7 @@
             // 
             // 
             this.txtHo.CustomButton.Image = null;
-            this.txtHo.CustomButton.Location = new System.Drawing.Point(84, 1);
+            this.txtHo.CustomButton.Location = new System.Drawing.Point(208, 1);
             this.txtHo.CustomButton.Name = "";
             this.txtHo.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtHo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -266,7 +266,7 @@
             this.txtHo.CustomButton.UseSelectable = true;
             this.txtHo.CustomButton.Visible = false;
             this.txtHo.Lines = new string[0];
-            this.txtHo.Location = new System.Drawing.Point(42, 52);
+            this.txtHo.Location = new System.Drawing.Point(85, 52);
             this.txtHo.MaxLength = 32767;
             this.txtHo.Name = "txtHo";
             this.txtHo.PasswordChar = '\0';
@@ -275,7 +275,7 @@
             this.txtHo.SelectionLength = 0;
             this.txtHo.SelectionStart = 0;
             this.txtHo.ShortcutsEnabled = true;
-            this.txtHo.Size = new System.Drawing.Size(106, 23);
+            this.txtHo.Size = new System.Drawing.Size(230, 23);
             this.txtHo.TabIndex = 7;
             this.txtHo.UseSelectable = true;
             this.txtHo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -287,7 +287,7 @@
             // 
             // 
             this.txtMaSV.CustomButton.Image = null;
-            this.txtMaSV.CustomButton.Location = new System.Drawing.Point(192, 1);
+            this.txtMaSV.CustomButton.Location = new System.Drawing.Point(208, 1);
             this.txtMaSV.CustomButton.Name = "";
             this.txtMaSV.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMaSV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -296,16 +296,17 @@
             this.txtMaSV.CustomButton.UseSelectable = true;
             this.txtMaSV.CustomButton.Visible = false;
             this.txtMaSV.Lines = new string[0];
-            this.txtMaSV.Location = new System.Drawing.Point(101, 14);
+            this.txtMaSV.Location = new System.Drawing.Point(85, 14);
             this.txtMaSV.MaxLength = 32767;
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.PasswordChar = '\0';
+            this.txtMaSV.ReadOnly = true;
             this.txtMaSV.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMaSV.SelectedText = "";
             this.txtMaSV.SelectionLength = 0;
             this.txtMaSV.SelectionStart = 0;
             this.txtMaSV.ShortcutsEnabled = true;
-            this.txtMaSV.Size = new System.Drawing.Size(214, 23);
+            this.txtMaSV.Size = new System.Drawing.Size(230, 23);
             this.txtMaSV.TabIndex = 6;
             this.txtMaSV.UseSelectable = true;
             this.txtMaSV.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -314,11 +315,12 @@
             // dgvManager
             // 
             this.dgvManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManager.Location = new System.Drawing.Point(369, 63);
+            this.dgvManager.Location = new System.Drawing.Point(354, 63);
             this.dgvManager.Name = "dgvManager";
-            this.dgvManager.Size = new System.Drawing.Size(652, 305);
+            this.dgvManager.Size = new System.Drawing.Size(665, 305);
             this.dgvManager.TabIndex = 7;
-            this.dgvManager.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManager_CellContentClick);
+            this.dgvManager.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManager_CellClick);
+            this.dgvManager.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvManager_CellFormatting);
             // 
             // btnAddNewStudent
             // 
@@ -332,7 +334,7 @@
             // 
             // btnUpdateStudent
             // 
-            this.btnUpdateStudent.Location = new System.Drawing.Point(196, 387);
+            this.btnUpdateStudent.Location = new System.Drawing.Point(244, 387);
             this.btnUpdateStudent.Name = "btnUpdateStudent";
             this.btnUpdateStudent.Size = new System.Drawing.Size(138, 49);
             this.btnUpdateStudent.TabIndex = 9;
@@ -342,7 +344,7 @@
             // 
             // btnRemoveStudent
             // 
-            this.btnRemoveStudent.Location = new System.Drawing.Point(369, 387);
+            this.btnRemoveStudent.Location = new System.Drawing.Point(466, 387);
             this.btnRemoveStudent.Name = "btnRemoveStudent";
             this.btnRemoveStudent.Size = new System.Drawing.Size(138, 49);
             this.btnRemoveStudent.TabIndex = 10;
@@ -352,7 +354,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(538, 387);
+            this.btnSave.Location = new System.Drawing.Point(678, 387);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(138, 49);
             this.btnSave.TabIndex = 11;
@@ -362,7 +364,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(708, 387);
+            this.btnCancel.Location = new System.Drawing.Point(881, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(138, 49);
             this.btnCancel.TabIndex = 12;
@@ -384,7 +386,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 459);
+            this.ClientSize = new System.Drawing.Size(1035, 459);
             this.Controls.Add(this.btnShowData);
             this.Controls.Add(this.btnAddNewStudent);
             this.Controls.Add(this.btnUpdateStudent);
