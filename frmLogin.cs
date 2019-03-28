@@ -33,7 +33,23 @@ namespace PRN292_Group1_QLSvien
             }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void chkPinUser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPinUser.Checked)
+            {
+                Properties.Settings.Default.UserName = txtUsername.Text;
+                Properties.Settings.Default.Password = txtPassword.Text;
+            }
+            else
+            {
+                Properties.Settings.Default.UserName = null;
+                Properties.Settings.Default.Password = null;
+            }
+            Properties.Settings.Default.RememberMe = chkPinUser.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsername.Text))
             {
@@ -57,23 +73,7 @@ namespace PRN292_Group1_QLSvien
             }
         }
 
-        private void chkPinUser_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkPinUser.Checked)
-            {
-                Properties.Settings.Default.UserName = txtUsername.Text;
-                Properties.Settings.Default.Password = txtPassword.Text;
-            }
-            else
-            {
-                Properties.Settings.Default.UserName = null;
-                Properties.Settings.Default.Password = null;
-            }
-            Properties.Settings.Default.RememberMe = chkPinUser.Checked;
-            Properties.Settings.Default.Save();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             txtUsername.Clear();
             txtPassword.Clear();

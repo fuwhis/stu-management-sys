@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.lbMaSV = new MetroFramework.Controls.MetroLabel();
             this.lbHo = new MetroFramework.Controls.MetroLabel();
@@ -35,6 +35,11 @@
             this.lbGioiTinh = new MetroFramework.Controls.MetroLabel();
             this.lbMaKhoa = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnExit = new MetroFramework.Controls.MetroTile();
+            this.btnRemove = new MetroFramework.Controls.MetroTile();
+            this.btnEdit = new MetroFramework.Controls.MetroTile();
+            this.btnAdd = new MetroFramework.Controls.MetroTile();
+            this.btnShow = new MetroFramework.Controls.MetroTile();
             this.txtMaKhoa = new MetroFramework.Controls.MetroTextBox();
             this.txtGioiTinh = new MetroFramework.Controls.MetroTextBox();
             this.txtNgaySinh = new MetroFramework.Controls.MetroTextBox();
@@ -42,11 +47,6 @@
             this.txtHo = new MetroFramework.Controls.MetroTextBox();
             this.txtMaSV = new MetroFramework.Controls.MetroTextBox();
             this.dgvManager = new System.Windows.Forms.DataGridView();
-            this.btnAddNewStudent = new MetroFramework.Controls.MetroButton();
-            this.btnUpdateStudent = new MetroFramework.Controls.MetroButton();
-            this.btnRemoveStudent = new MetroFramework.Controls.MetroButton();
-            this.btnCancel = new MetroFramework.Controls.MetroButton();
-            this.btnShowData = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManager)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             // lbMaKhoa
             // 
             this.lbMaKhoa.AutoSize = true;
-            this.lbMaKhoa.Location = new System.Drawing.Point(11, 204);
+            this.lbMaKhoa.Location = new System.Drawing.Point(339, 15);
             this.lbMaKhoa.Name = "lbMaKhoa";
             this.lbMaKhoa.Size = new System.Drawing.Size(68, 19);
             this.lbMaKhoa.TabIndex = 5;
@@ -107,6 +107,11 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnExit);
+            this.metroPanel1.Controls.Add(this.btnRemove);
+            this.metroPanel1.Controls.Add(this.btnEdit);
+            this.metroPanel1.Controls.Add(this.btnAdd);
+            this.metroPanel1.Controls.Add(this.btnShow);
             this.metroPanel1.Controls.Add(this.txtMaKhoa);
             this.metroPanel1.Controls.Add(this.txtGioiTinh);
             this.metroPanel1.Controls.Add(this.txtNgaySinh);
@@ -119,16 +124,85 @@
             this.metroPanel1.Controls.Add(this.lbNgaySinh);
             this.metroPanel1.Controls.Add(this.lbMaSV);
             this.metroPanel1.Controls.Add(this.lbHo);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(23, 63);
+            this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(325, 241);
+            this.metroPanel1.Size = new System.Drawing.Size(661, 520);
             this.metroPanel1.TabIndex = 6;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // btnExit
+            // 
+            this.btnExit.ActiveControl = null;
+            this.btnExit.Location = new System.Drawing.Point(339, 167);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(109, 38);
+            this.btnExit.TabIndex = 20;
+            this.btnExit.Text = "Exit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnExit.UseSelectable = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.ActiveControl = null;
+            this.btnRemove.Location = new System.Drawing.Point(534, 111);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(109, 38);
+            this.btnRemove.TabIndex = 19;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRemove.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnRemove.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnRemove.UseSelectable = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.ActiveControl = null;
+            this.btnEdit.Location = new System.Drawing.Point(339, 111);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 38);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEdit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnEdit.UseSelectable = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.ActiveControl = null;
+            this.btnAdd.Location = new System.Drawing.Point(534, 55);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(109, 38);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdd.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnAdd.UseSelectable = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnShow
+            // 
+            this.btnShow.ActiveControl = null;
+            this.btnShow.Location = new System.Drawing.Point(339, 55);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(109, 38);
+            this.btnShow.TabIndex = 15;
+            this.btnShow.Text = "Show Data";
+            this.btnShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnShow.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShow.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnShow.UseSelectable = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // txtMaKhoa
             // 
@@ -145,7 +219,7 @@
             this.txtMaKhoa.CustomButton.UseSelectable = true;
             this.txtMaKhoa.CustomButton.Visible = false;
             this.txtMaKhoa.Lines = new string[0];
-            this.txtMaKhoa.Location = new System.Drawing.Point(85, 204);
+            this.txtMaKhoa.Location = new System.Drawing.Point(413, 15);
             this.txtMaKhoa.MaxLength = 32767;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.PasswordChar = '\0';
@@ -205,7 +279,7 @@
             this.txtNgaySinh.CustomButton.UseSelectable = true;
             this.txtNgaySinh.CustomButton.Visible = false;
             this.txtNgaySinh.Lines = new string[0];
-            this.txtNgaySinh.Location = new System.Drawing.Point(85, 126);
+            this.txtNgaySinh.Location = new System.Drawing.Point(85, 129);
             this.txtNgaySinh.MaxLength = 32767;
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.PasswordChar = '\0';
@@ -314,77 +388,22 @@
             // dgvManager
             // 
             this.dgvManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManager.Location = new System.Drawing.Point(354, 63);
+            this.dgvManager.Location = new System.Drawing.Point(18, 299);
             this.dgvManager.Name = "dgvManager";
-            this.dgvManager.Size = new System.Drawing.Size(665, 305);
+            this.dgvManager.Size = new System.Drawing.Size(665, 294);
             this.dgvManager.TabIndex = 7;
             this.dgvManager.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManager_CellClick);
             this.dgvManager.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvManager_CellFormatting);
-            // 
-            // btnAddNewStudent
-            // 
-            this.btnAddNewStudent.Location = new System.Drawing.Point(24, 387);
-            this.btnAddNewStudent.Name = "btnAddNewStudent";
-            this.btnAddNewStudent.Size = new System.Drawing.Size(138, 49);
-            this.btnAddNewStudent.TabIndex = 8;
-            this.btnAddNewStudent.Text = "Add New Student";
-            this.btnAddNewStudent.UseSelectable = true;
-            this.btnAddNewStudent.Click += new System.EventHandler(this.btnAddNewStudent_Click);
-            // 
-            // btnUpdateStudent
-            // 
-            this.btnUpdateStudent.Location = new System.Drawing.Point(302, 387);
-            this.btnUpdateStudent.Name = "btnUpdateStudent";
-            this.btnUpdateStudent.Size = new System.Drawing.Size(138, 49);
-            this.btnUpdateStudent.TabIndex = 9;
-            this.btnUpdateStudent.Text = "Update Data";
-            this.btnUpdateStudent.UseSelectable = true;
-            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
-            // 
-            // btnRemoveStudent
-            // 
-            this.btnRemoveStudent.Location = new System.Drawing.Point(583, 387);
-            this.btnRemoveStudent.Name = "btnRemoveStudent";
-            this.btnRemoveStudent.Size = new System.Drawing.Size(138, 49);
-            this.btnRemoveStudent.TabIndex = 10;
-            this.btnRemoveStudent.Text = "Remove a Student";
-            this.btnRemoveStudent.UseSelectable = true;
-            this.btnRemoveStudent.Click += new System.EventHandler(this.btnRemoveStudent_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(881, 387);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(138, 49);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Exit";
-            this.btnCancel.UseSelectable = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnShowData
-            // 
-            this.btnShowData.Location = new System.Drawing.Point(23, 310);
-            this.btnShowData.Name = "btnShowData";
-            this.btnShowData.Size = new System.Drawing.Size(325, 58);
-            this.btnShowData.TabIndex = 13;
-            this.btnShowData.Text = "Show Data";
-            this.btnShowData.UseSelectable = true;
-            this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 459);
-            this.Controls.Add(this.btnShowData);
-            this.Controls.Add(this.btnAddNewStudent);
-            this.Controls.Add(this.btnUpdateStudent);
+            this.ClientSize = new System.Drawing.Size(701, 600);
             this.Controls.Add(this.dgvManager);
-            this.Controls.Add(this.btnRemoveStudent);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.btnCancel);
             this.Name = "frmMain";
-            this.Text = "Data Display Form";
+            this.Text = "Students Management";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
@@ -408,11 +427,11 @@
         private MetroFramework.Controls.MetroTextBox txtTen;
         private MetroFramework.Controls.MetroTextBox txtHo;
         private MetroFramework.Controls.MetroTextBox txtMaSV;
-        private System.Windows.Forms.DataGridView dgvManager;
-        private MetroFramework.Controls.MetroButton btnAddNewStudent;
-        private MetroFramework.Controls.MetroButton btnUpdateStudent;
-        private MetroFramework.Controls.MetroButton btnRemoveStudent;
-        private MetroFramework.Controls.MetroButton btnCancel;
-        private MetroFramework.Controls.MetroButton btnShowData;
+        public System.Windows.Forms.DataGridView dgvManager;
+        private MetroFramework.Controls.MetroTile btnShow;
+        public MetroFramework.Controls.MetroTile btnAdd;
+        public MetroFramework.Controls.MetroTile btnEdit;
+        private MetroFramework.Controls.MetroTile btnExit;
+        private MetroFramework.Controls.MetroTile btnRemove;
     }
 }

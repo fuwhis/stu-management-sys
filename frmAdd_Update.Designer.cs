@@ -26,12 +26,12 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.rdFemale = new System.Windows.Forms.RadioButton();
-            this.rdMale = new System.Windows.Forms.RadioButton();
-            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.mrdFemale = new MetroFramework.Controls.MetroRadioButton();
+            this.dtNgaySinh = new MetroFramework.Controls.MetroDateTime();
+            this.mrdMale = new MetroFramework.Controls.MetroRadioButton();
             this.txtMaKhoa = new MetroFramework.Controls.MetroTextBox();
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.txtHo = new MetroFramework.Controls.MetroTextBox();
@@ -42,17 +42,17 @@
             this.lbNgaySinh = new MetroFramework.Controls.MetroLabel();
             this.lbMaSV = new MetroFramework.Controls.MetroLabel();
             this.lbHo = new MetroFramework.Controls.MetroLabel();
-            this.btnSave = new MetroFramework.Controls.MetroButton();
-            this.btnReturn = new MetroFramework.Controls.MetroButton();
-            this.btnCheck = new MetroFramework.Controls.MetroButton();
+            this.btnSave = new MetroFramework.Controls.MetroTile();
+            this.btnCancel = new MetroFramework.Controls.MetroTile();
+            this.btnCheckStudentExist = new MetroFramework.Controls.MetroTile();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.rdFemale);
-            this.metroPanel1.Controls.Add(this.rdMale);
-            this.metroPanel1.Controls.Add(this.txtNgaySinh);
+            this.metroPanel1.Controls.Add(this.mrdFemale);
+            this.metroPanel1.Controls.Add(this.dtNgaySinh);
+            this.metroPanel1.Controls.Add(this.mrdMale);
             this.metroPanel1.Controls.Add(this.txtMaKhoa);
             this.metroPanel1.Controls.Add(this.txtTen);
             this.metroPanel1.Controls.Add(this.txtHo);
@@ -74,40 +74,41 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // rdFemale
+            // mrdFemale
             // 
-            this.rdFemale.AutoSize = true;
-            this.rdFemale.Location = new System.Drawing.Point(232, 174);
-            this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdFemale.TabIndex = 13;
-            this.rdFemale.Text = "Female";
-            this.rdFemale.UseVisualStyleBackColor = true;
-            this.rdFemale.CheckedChanged += new System.EventHandler(this.rdFemale_CheckedChanged);
+            this.mrdFemale.AutoSize = true;
+            this.mrdFemale.Location = new System.Drawing.Point(228, 176);
+            this.mrdFemale.Name = "mrdFemale";
+            this.mrdFemale.Size = new System.Drawing.Size(61, 15);
+            this.mrdFemale.TabIndex = 15;
+            this.mrdFemale.Text = "Female";
+            this.mrdFemale.UseSelectable = true;
+            this.mrdFemale.CheckedChanged += new System.EventHandler(this.mrdFemale_CheckedChanged);
             // 
-            // rdMale
+            // dtNgaySinh
             // 
-            this.rdMale.AutoSize = true;
-            this.rdMale.Checked = true;
-            this.rdMale.Location = new System.Drawing.Point(101, 174);
-            this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(48, 17);
-            this.rdMale.TabIndex = 12;
-            this.rdMale.TabStop = true;
-            this.rdMale.Text = "Male";
-            this.rdMale.UseVisualStyleBackColor = true;
-            this.rdMale.CheckedChanged += new System.EventHandler(this.rdMale_CheckedChanged);
+            this.dtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgaySinh.Location = new System.Drawing.Point(101, 135);
+            this.dtNgaySinh.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.dtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtNgaySinh.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtNgaySinh.Name = "dtNgaySinh";
+            this.dtNgaySinh.Size = new System.Drawing.Size(216, 29);
+            this.dtNgaySinh.TabIndex = 12;
             // 
-            // txtNgaySinh
+            // mrdMale
             // 
-            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgaySinh.Location = new System.Drawing.Point(85, 135);
-            this.txtNgaySinh.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(232, 20);
-            this.txtNgaySinh.TabIndex = 11;
+            this.mrdMale.AutoSize = true;
+            this.mrdMale.Checked = true;
+            this.mrdMale.Location = new System.Drawing.Point(112, 176);
+            this.mrdMale.Name = "mrdMale";
+            this.mrdMale.Size = new System.Drawing.Size(49, 15);
+            this.mrdMale.TabIndex = 14;
+            this.mrdMale.TabStop = true;
+            this.mrdMale.Text = "Male";
+            this.mrdMale.UseSelectable = true;
+            this.mrdMale.CheckedChanged += new System.EventHandler(this.mrdMale_CheckedChanged);
             // 
             // txtMaKhoa
             // 
@@ -115,7 +116,7 @@
             // 
             // 
             this.txtMaKhoa.CustomButton.Image = null;
-            this.txtMaKhoa.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtMaKhoa.CustomButton.Location = new System.Drawing.Point(194, 1);
             this.txtMaKhoa.CustomButton.Name = "";
             this.txtMaKhoa.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMaKhoa.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -124,7 +125,7 @@
             this.txtMaKhoa.CustomButton.UseSelectable = true;
             this.txtMaKhoa.CustomButton.Visible = false;
             this.txtMaKhoa.Lines = new string[0];
-            this.txtMaKhoa.Location = new System.Drawing.Point(85, 209);
+            this.txtMaKhoa.Location = new System.Drawing.Point(101, 209);
             this.txtMaKhoa.MaxLength = 32767;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.PasswordChar = '\0';
@@ -133,7 +134,7 @@
             this.txtMaKhoa.SelectionLength = 0;
             this.txtMaKhoa.SelectionStart = 0;
             this.txtMaKhoa.ShortcutsEnabled = true;
-            this.txtMaKhoa.Size = new System.Drawing.Size(232, 23);
+            this.txtMaKhoa.Size = new System.Drawing.Size(216, 23);
             this.txtMaKhoa.TabIndex = 11;
             this.txtMaKhoa.UseSelectable = true;
             this.txtMaKhoa.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -145,7 +146,7 @@
             // 
             // 
             this.txtTen.CustomButton.Image = null;
-            this.txtTen.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtTen.CustomButton.Location = new System.Drawing.Point(194, 1);
             this.txtTen.CustomButton.Name = "";
             this.txtTen.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTen.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -154,7 +155,7 @@
             this.txtTen.CustomButton.UseSelectable = true;
             this.txtTen.CustomButton.Visible = false;
             this.txtTen.Lines = new string[0];
-            this.txtTen.Location = new System.Drawing.Point(85, 98);
+            this.txtTen.Location = new System.Drawing.Point(101, 98);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -163,7 +164,7 @@
             this.txtTen.SelectionLength = 0;
             this.txtTen.SelectionStart = 0;
             this.txtTen.ShortcutsEnabled = true;
-            this.txtTen.Size = new System.Drawing.Size(232, 23);
+            this.txtTen.Size = new System.Drawing.Size(216, 23);
             this.txtTen.TabIndex = 8;
             this.txtTen.UseSelectable = true;
             this.txtTen.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -175,7 +176,7 @@
             // 
             // 
             this.txtHo.CustomButton.Image = null;
-            this.txtHo.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtHo.CustomButton.Location = new System.Drawing.Point(194, 1);
             this.txtHo.CustomButton.Name = "";
             this.txtHo.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtHo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -184,7 +185,7 @@
             this.txtHo.CustomButton.UseSelectable = true;
             this.txtHo.CustomButton.Visible = false;
             this.txtHo.Lines = new string[0];
-            this.txtHo.Location = new System.Drawing.Point(85, 56);
+            this.txtHo.Location = new System.Drawing.Point(101, 56);
             this.txtHo.MaxLength = 32767;
             this.txtHo.Name = "txtHo";
             this.txtHo.PasswordChar = '\0';
@@ -193,7 +194,7 @@
             this.txtHo.SelectionLength = 0;
             this.txtHo.SelectionStart = 0;
             this.txtHo.ShortcutsEnabled = true;
-            this.txtHo.Size = new System.Drawing.Size(232, 23);
+            this.txtHo.Size = new System.Drawing.Size(216, 23);
             this.txtHo.TabIndex = 7;
             this.txtHo.UseSelectable = true;
             this.txtHo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -285,40 +286,53 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(160, 339);
+            this.btnSave.ActiveControl = null;
+            this.btnSave.Location = new System.Drawing.Point(142, 326);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 28);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.Size = new System.Drawing.Size(95, 41);
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "OK";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnSave.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnSave.UseSelectable = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnReturn
+            // btnCancel
             // 
-            this.btnReturn.Location = new System.Drawing.Point(287, 339);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 28);
-            this.btnReturn.TabIndex = 9;
-            this.btnReturn.Text = "Cancel";
-            this.btnReturn.UseSelectable = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            this.btnCancel.ActiveControl = null;
+            this.btnCancel.Location = new System.Drawing.Point(272, 326);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(87, 41);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnCancel.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnCancel.UseSelectable = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnCheck
+            // btnCheckStudentExist
             // 
-            this.btnCheck.Location = new System.Drawing.Point(24, 339);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(75, 28);
-            this.btnCheck.TabIndex = 10;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseSelectable = true;
+            this.btnCheckStudentExist.ActiveControl = null;
+            this.btnCheckStudentExist.Location = new System.Drawing.Point(21, 326);
+            this.btnCheckStudentExist.Name = "btnCheckStudentExist";
+            this.btnCheckStudentExist.Size = new System.Drawing.Size(86, 41);
+            this.btnCheckStudentExist.TabIndex = 14;
+            this.btnCheckStudentExist.Text = "Check";
+            this.btnCheckStudentExist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCheckStudentExist.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnCheckStudentExist.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnCheckStudentExist.UseSelectable = true;
+            this.btnCheckStudentExist.Click += new System.EventHandler(this.btnCheckStudentExist_Click);
             // 
             // frmAdd_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 385);
-            this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.btnReturn);
+            this.ClientSize = new System.Drawing.Size(382, 385);
+            this.Controls.Add(this.btnCheckStudentExist);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmAdd_Update";
@@ -332,21 +346,21 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroTextBox txtMaKhoa;
-        private MetroFramework.Controls.MetroTextBox txtTen;
-        private MetroFramework.Controls.MetroTextBox txtHo;
-        private MetroFramework.Controls.MetroTextBox txtMaSV;
+        public MetroFramework.Controls.MetroTextBox txtMaKhoa;
+        public MetroFramework.Controls.MetroTextBox txtTen;
+        public MetroFramework.Controls.MetroTextBox txtHo;
+        public MetroFramework.Controls.MetroTextBox txtMaSV;
         private MetroFramework.Controls.MetroLabel lbGioiTinh;
         private MetroFramework.Controls.MetroLabel lbMaKhoa;
         private MetroFramework.Controls.MetroLabel lbTen;
         private MetroFramework.Controls.MetroLabel lbNgaySinh;
         private MetroFramework.Controls.MetroLabel lbMaSV;
         private MetroFramework.Controls.MetroLabel lbHo;
-        private MetroFramework.Controls.MetroButton btnSave;
-        private MetroFramework.Controls.MetroButton btnReturn;
-        private MetroFramework.Controls.MetroButton btnCheck;
-        private System.Windows.Forms.DateTimePicker txtNgaySinh;
-        private System.Windows.Forms.RadioButton rdFemale;
-        private System.Windows.Forms.RadioButton rdMale;
+        public MetroFramework.Controls.MetroRadioButton mrdMale;
+        public MetroFramework.Controls.MetroDateTime dtNgaySinh;
+        public MetroFramework.Controls.MetroRadioButton mrdFemale;
+        public MetroFramework.Controls.MetroTile btnSave;
+        private MetroFramework.Controls.MetroTile btnCancel;
+        public MetroFramework.Controls.MetroTile btnCheckStudentExist;
     }
 }

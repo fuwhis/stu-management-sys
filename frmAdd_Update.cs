@@ -21,90 +21,94 @@ namespace PRN292_Group1_QLSvien
         frmMain MainForm = new frmMain();
         Boolean GioiTinh;
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void mrdFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            GioiTinh = false;
+        }
+
+        private void mrdMale_CheckedChanged(object sender, EventArgs e)
+        {
+            GioiTinh = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // check null
+            if (string.IsNullOrEmpty(txtMaSV.Text))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Please enter MaSV first!", "Message",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSV.Focus();
+                return;
+            }
+
+            // nếu không có data thì hiển thị thông báo "Bạn có muốn thêm sinh viên mới không" nút save sẽ thành nút ADD
+            // nếu có data thì show lên các textbox, cho phép modify và nút save sẽ thành nút UPDATE
+            bool result = true;
+
+            if (!SinhVienDAO.IsExistedStudent(txtMaSV.Text.Trim()))
+            {
+                // ADD 
+                //if (MetroFramework.MetroMessageBox.Show(this, "MaSV has not already existed\nWould you like to ADD new Student???", "Message",
+                //    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                //{
+                try
+                {
+                    result = SinhVienDAO.InsertStudent(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
+                        dtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
+                }
+                catch (Exception ex)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //}
+                // Thoát form này
+                this.Close();
+            }
+            else if (SinhVienDAO.IsExistedStudent(txtMaSV.Text.Trim()))
+            {
+                // UPDATE 
+                // Nếu maSV tồn tại
+                try
+                {
+                    result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
+                    dtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
+                }
+                catch (Exception ex)
+                {
+                    MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                this.Close();
+            }
+            if (result)
+            {
+                // UPDATE thành công
+                MetroFramework.MetroMessageBox.Show(this, "Updated.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MainForm.dgvManager.DataSource = SinhVienDAO.ListAllStudent();
+                MainForm.dgvManager.Update();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
             MainForm.ShowDialog();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnCheckStudentExist_Click(object sender, EventArgs e)
         {
-            // check MaSV 
-            // nếu không có data thì hiển thị thông báo "Bạn có muốn thêm sinh viên mới không" nút save sẽ thành nút ADD
-            // nếu có data thì show lên các textbox, cho phép modify và nút save sẽ thành nút UPDATE
-            bool result = true;
-            if (!SinhVienDAO.IsExistedMASV(txtMaSV.Text.Trim()))
+            if (SinhVienDAO.IsExistedStudent(txtMaSV.Text.Trim()))
             {
-                // ADD 
-                DialogResult dialogResult1 = MetroFramework.MetroMessageBox.Show(this, "MaSV is not already existed\nWould you like to ADD new???", "Message",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult1 == DialogResult.Yes)
-                {
-                    try
-                    {
-                        result = SinhVienDAO.InsertStudent(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
-                            txtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
-                    }
-                    catch (Exception ex)
-                    {
-                        MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
-                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else if (dialogResult1 == DialogResult.No)
-                {
-                    // Thoát form này
-                    this.Close();
-                }
+                MetroFramework.MetroMessageBox.Show(this, "Student has already existed. Please input new Student!", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (SinhVienDAO.IsExistedMASV(txtMaSV.Text.Trim()))
+            else if (!SinhVienDAO.IsExistedStudent(txtMaSV.Text.Trim()))
             {
-                DialogResult dialogResult2 = MetroFramework.MetroMessageBox.Show(this, "MaSV is already existed\nWould you like to UPDATE???", "Message",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // UPDATE 
-                // Nếu maSV tồn tại
-                if (dialogResult2 == DialogResult.Yes)
-                {
-                    try
-                    {
-                        // Get value from sql 
-                        // Phía dưới sai rồi
-                        txtMaSV.ReadOnly = true;
-                        string HO = txtHo.Text.Trim();
-                        string TEN = txtTen.Text.Trim();
-                        DateTime NGAYSINH = txtNgaySinh.Value.Date;
-                        string MAKH = txtMaKhoa.Text.Trim();
-                        result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), HO, TEN, NGAYSINH, GioiTinh, MAKH);
-                        //result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
-                        //    txtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
-                    }
-                    catch (Exception ex)
-                    {
-                        MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
-                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else if (dialogResult2 == DialogResult.No)
-                {
-                    this.Close();
-                }
+                MetroFramework.MetroMessageBox.Show(this, "Student has not already existed.", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (result)
-            {
-                // UPDATE thành công
-                MetroFramework.MetroMessageBox.Show(this, "Successed.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void rdMale_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            GioiTinh = true;
-        }
-
-        private void rdFemale_CheckedChanged(object sender, EventArgs e)
-        {
-            GioiTinh = false;
         }
     }
 }

@@ -56,9 +56,9 @@ namespace PRN292_Group1_QLSvien.Models.SinhVien
         {
             return DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM SVIEN").Read();
         }
-        
 
-        public static bool IsExistedMASV(string maSV)
+
+        public static bool IsExistedStudent(string maSV)
         {
             return DataProvider.DataProvider.ExecuteDataReader("SELECT * FROM SVIEN Where MASV = @1", maSV).Read();
         }

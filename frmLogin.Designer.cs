@@ -33,10 +33,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
-            this.btnLogin = new MetroFramework.Controls.MetroButton();
             this.chkPinUser = new MetroFramework.Controls.MetroCheckBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.btnClear = new MetroFramework.Controls.MetroButton();
+            this.btnLogin = new MetroFramework.Controls.MetroTile();
+            this.btnClear = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -119,19 +119,11 @@
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(388, 153);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(82, 31);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "LOGIN";
-            this.btnLogin.UseSelectable = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // chkPinUser
             // 
             this.chkPinUser.AutoSize = true;
+            this.chkPinUser.Checked = true;
+            this.chkPinUser.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPinUser.Location = new System.Drawing.Point(151, 132);
             this.chkPinUser.Name = "chkPinUser";
             this.chkPinUser.Size = new System.Drawing.Size(101, 15);
@@ -144,24 +136,42 @@
             // 
             this.metroStyleManager1.Owner = null;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.ActiveControl = null;
+            this.btnLogin.Location = new System.Drawing.Point(388, 144);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(81, 42);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnLogin.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnLogin.UseSelectable = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(151, 155);
+            this.btnClear.ActiveControl = null;
+            this.btnClear.Location = new System.Drawing.Point(273, 144);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(81, 31);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "CLEAR";
+            this.btnClear.Size = new System.Drawing.Size(81, 42);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "Clear";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClear.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnClear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnClear.UseSelectable = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 209);
+            this.ClientSize = new System.Drawing.Size(492, 198);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.chkPinUser);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.chkPinUser);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox1);
@@ -180,10 +190,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTextBox txtUsername;
         private MetroFramework.Controls.MetroTextBox txtPassword;
-        private MetroFramework.Controls.MetroButton btnLogin;
         private MetroFramework.Controls.MetroCheckBox chkPinUser;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private MetroFramework.Controls.MetroButton btnClear;
+        private MetroFramework.Controls.MetroTile btnLogin;
+        private MetroFramework.Controls.MetroTile btnClear;
     }
 }
 
