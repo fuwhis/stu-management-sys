@@ -44,7 +44,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 74);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,9 +139,9 @@
             // btnLogin
             // 
             this.btnLogin.ActiveControl = null;
-            this.btnLogin.Location = new System.Drawing.Point(388, 144);
+            this.btnLogin.Location = new System.Drawing.Point(374, 144);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(81, 42);
+            this.btnLogin.Size = new System.Drawing.Size(95, 42);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,9 +153,9 @@
             // btnClear
             // 
             this.btnClear.ActiveControl = null;
-            this.btnClear.Location = new System.Drawing.Point(273, 144);
+            this.btnClear.Location = new System.Drawing.Point(277, 144);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(81, 42);
+            this.btnClear.Size = new System.Drawing.Size(95, 42);
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,6 +176,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmLogin";
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Welcome to Student Management System";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -235,64 +235,64 @@
             this.lbGioiTinh.AutoSize = true;
             this.lbGioiTinh.Location = new System.Drawing.Point(13, 172);
             this.lbGioiTinh.Name = "lbGioiTinh";
-            this.lbGioiTinh.Size = new System.Drawing.Size(67, 19);
+            this.lbGioiTinh.Size = new System.Drawing.Size(51, 19);
             this.lbGioiTinh.TabIndex = 4;
-            this.lbGioiTinh.Text = "Giới Tính: ";
+            this.lbGioiTinh.Text = "Genre: ";
             // 
             // lbMaKhoa
             // 
             this.lbMaKhoa.AutoSize = true;
             this.lbMaKhoa.Location = new System.Drawing.Point(11, 209);
             this.lbMaKhoa.Name = "lbMaKhoa";
-            this.lbMaKhoa.Size = new System.Drawing.Size(68, 19);
+            this.lbMaKhoa.Size = new System.Drawing.Size(57, 19);
             this.lbMaKhoa.TabIndex = 5;
-            this.lbMaKhoa.Text = "Mã Khoa: ";
+            this.lbMaKhoa.Text = "TermID: ";
             // 
             // lbTen
             // 
             this.lbTen.AutoSize = true;
             this.lbTen.Location = new System.Drawing.Point(11, 102);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(31, 19);
+            this.lbTen.Size = new System.Drawing.Size(67, 19);
             this.lbTen.TabIndex = 2;
-            this.lbTen.Text = "Tên:";
+            this.lbTen.Text = "Lastname:";
             // 
             // lbNgaySinh
             // 
             this.lbNgaySinh.AutoSize = true;
             this.lbNgaySinh.Location = new System.Drawing.Point(11, 135);
             this.lbNgaySinh.Name = "lbNgaySinh";
-            this.lbNgaySinh.Size = new System.Drawing.Size(75, 19);
+            this.lbNgaySinh.Size = new System.Drawing.Size(91, 19);
             this.lbNgaySinh.TabIndex = 3;
-            this.lbNgaySinh.Text = "Ngày Sinh: ";
+            this.lbNgaySinh.Text = "Date of birth: ";
             // 
             // lbMaSV
             // 
             this.lbMaSV.AutoSize = true;
             this.lbMaSV.Location = new System.Drawing.Point(13, 16);
             this.lbMaSV.Name = "lbMaSV";
-            this.lbMaSV.Size = new System.Drawing.Size(92, 19);
+            this.lbMaSV.Size = new System.Drawing.Size(68, 19);
             this.lbMaSV.TabIndex = 0;
-            this.lbMaSV.Text = "Mã Sinh Viên: ";
+            this.lbMaSV.Text = "StudentID:";
             // 
             // lbHo
             // 
             this.lbHo.AutoSize = true;
             this.lbHo.Location = new System.Drawing.Point(13, 56);
             this.lbHo.Name = "lbHo";
-            this.lbHo.Size = new System.Drawing.Size(33, 19);
+            this.lbHo.Size = new System.Drawing.Size(69, 19);
             this.lbHo.TabIndex = 1;
-            this.lbHo.Text = "Họ: ";
+            this.lbHo.Text = "Firstname:";
             // 
             // btnSave
             // 
             this.btnSave.ActiveControl = null;
-            this.btnSave.Location = new System.Drawing.Point(142, 326);
+            this.btnSave.Location = new System.Drawing.Point(127, 326);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 41);
+            this.btnSave.Size = new System.Drawing.Size(126, 45);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "OK";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnSave.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnSave.UseSelectable = true;
@@ -301,13 +301,13 @@
             // btnCancel
             // 
             this.btnCancel.ActiveControl = null;
-            this.btnCancel.Location = new System.Drawing.Point(272, 326);
+            this.btnCancel.Location = new System.Drawing.Point(254, 326);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 41);
+            this.btnCancel.Size = new System.Drawing.Size(105, 45);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancel.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnCancel.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnCancel.UseSelectable = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -317,10 +317,10 @@
             this.btnCheckStudentExist.ActiveControl = null;
             this.btnCheckStudentExist.Location = new System.Drawing.Point(21, 326);
             this.btnCheckStudentExist.Name = "btnCheckStudentExist";
-            this.btnCheckStudentExist.Size = new System.Drawing.Size(86, 41);
+            this.btnCheckStudentExist.Size = new System.Drawing.Size(105, 45);
             this.btnCheckStudentExist.TabIndex = 14;
             this.btnCheckStudentExist.Text = "Check";
-            this.btnCheckStudentExist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCheckStudentExist.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckStudentExist.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnCheckStudentExist.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnCheckStudentExist.UseSelectable = true;
@@ -330,11 +330,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 385);
+            this.ClientSize = new System.Drawing.Size(382, 382);
             this.Controls.Add(this.btnCheckStudentExist);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.metroPanel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAdd_Update";
             this.Text = "Update Form";
             this.metroPanel1.ResumeLayout(false);

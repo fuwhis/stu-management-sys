@@ -20,6 +20,11 @@ namespace PRN292_Group1_QLSvien
 
         frmMain frmMain = new frmMain();
 
+        private void clearTextBox()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
             this.StyleManager = metroStyleManager1; // Using StyleManager to apply other customized themes
@@ -31,6 +36,7 @@ namespace PRN292_Group1_QLSvien
                 txtUsername.Text = Properties.Settings.Default.UserName;
                 txtPassword.Text = Properties.Settings.Default.Password;
             }
+            //clearTextBox();
         }
 
         private void chkPinUser_CheckedChanged(object sender, EventArgs e)
@@ -63,7 +69,7 @@ namespace PRN292_Group1_QLSvien
                 if (AccountDAO.checkLogin(txtUsername.Text.Trim(), txtPassword.Text))
                 {
                     frmMain.ShowDialog();
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch (Exception ex)

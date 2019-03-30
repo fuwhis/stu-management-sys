@@ -42,34 +42,28 @@ namespace PRN292_Group1_QLSvien
                 return;
             }
 
-            // nếu không có data thì hiển thị thông báo "Bạn có muốn thêm sinh viên mới không" nút save sẽ thành nút ADD
-            // nếu có data thì show lên các textbox, cho phép modify và nút save sẽ thành nút UPDATE
             bool result = true;
 
             if (!SinhVienDAO.IsExistedStudent(txtMaSV.Text.Trim()))
             {
                 // ADD 
-                //if (MetroFramework.MetroMessageBox.Show(this, "MaSV has not already existed\nWould you like to ADD new Student???", "Message",
-                //    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                //{
+                
                 try
                 {
                     result = SinhVienDAO.InsertStudent(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
                         dtNgaySinh.Value.Date, GioiTinh, txtMaKhoa.Text.Trim());
+
                 }
                 catch (Exception ex)
                 {
                     MetroFramework.MetroMessageBox.Show(this, ex.Message, "Message",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //}
-                // Thoát form này
                 this.Close();
             }
             else if (SinhVienDAO.IsExistedStudent(txtMaSV.Text.Trim()))
             {
                 // UPDATE 
-                // Nếu maSV tồn tại
                 try
                 {
                     result = SinhVienDAO.UpdateInfo(txtMaSV.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(),
@@ -84,10 +78,8 @@ namespace PRN292_Group1_QLSvien
             }
             if (result)
             {
-                // UPDATE thành công
+                // update thành công
                 MetroFramework.MetroMessageBox.Show(this, "Updated.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //MainForm.dgvManager.DataSource = SinhVienDAO.ListAllStudent();
-                MainForm.dgvManager.Update();
             }
         }
 

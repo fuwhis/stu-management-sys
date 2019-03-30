@@ -92,18 +92,19 @@ namespace PRN292_Group1_QLSvien
 
         public void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAdd_Update frmAdd = new frmAdd_Update();
-            frmAdd.Text = "Add Form";
-            frmAdd.btnSave.Text = "Add";
-            frmAdd.ShowDialog();
+            frmAdd_Update formAdd = new frmAdd_Update();
+            formAdd.Text = "Add Form";
+            formAdd.btnSave.Text = "ADD NEW";
+            formAdd.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             frmAdd_Update formEdit = new frmAdd_Update();
             formEdit.Text = "Update Form";
-            formEdit.btnSave.Text = "Update";
-            formEdit.btnCheckStudentExist.Hide();
+            formEdit.btnSave.Text = "UPDATE";
+            //formEdit.btnCheckStudentExist.Hide();
+            formEdit.btnCheckStudentExist.Enabled = false;
             formEdit.txtMaSV.ReadOnly = true;
 
             // Get current index of cell
@@ -150,7 +151,7 @@ namespace PRN292_Group1_QLSvien
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
